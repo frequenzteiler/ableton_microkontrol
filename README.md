@@ -15,7 +15,7 @@ the middle buttons as a send interface. All the knobs/sliders will be dynamicall
 to the current instrument.
 
 * The provided scripts will work perfectly with Ableton 8.
-* Support for Ableton 9 is in progress
+* Support for Ableton 9 is in progress (Tamas Kalman)
 
 For installation please read the docs/wacKMK_Ableton_Control_Surface_Manual.pdf 
 
