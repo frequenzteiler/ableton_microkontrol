@@ -1,5 +1,6 @@
 # emacs-mode: -*- python-*-
 
+from __future__ import with_statement
 import Live
 from _Framework.ControlSurface import ControlSurface
 from kmkControlL8_B.kmkSysexLookup import *

@@ -1,5 +1,6 @@
 # emacs-mode: -*- python-*-
 
+from __future__ import with_statement
 import Live
 from _Framework.ControlSurface import ControlSurface
 from _Framework.InputControlElement import *
@@ -32,14 +33,17 @@ class kmkControlB (ControlSurface):
 
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
-        self.log_message("!!!!!!!!!!!KMK_B control surface is go!!!!!!!!!!!")
-        self.set_suppress_rebuild_requests(True)
-        is_momentary = True
-        self._shift_button = ButtonElement(is_momentary, MIDI_NOTE_TYPE, CHANNEL, KMK_PAD[11])
-        mixer = self._setup_mixer_control()
-        self._setup_device_and_transport_control()
-        self.set_suppress_rebuild_requests(False)
+        self.component_guard().__enter__()
 
+        try:
+            is_momentary = True
+            self._shift_button = ButtonElement(is_momentary, MIDI_NOTE_TYPE, CHANNEL, KMK_PAD[11])
+            mixer = self._setup_mixer_control()
+            self._setup_device_and_transport_control() 
+            self.log_message("!!!!!!!!!!!KMK_B control surface is go!!!!!!!!!!!")
+        finally:
+            pass
+        
     def refresh_state(self):
         ControlSurface.refresh_state(self)
         self.schedule_message(5, self._update_hardware)
