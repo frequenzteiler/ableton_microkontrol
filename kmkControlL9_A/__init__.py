@@ -1,6 +1,3 @@
-# emacs-mode: -*- python-*-
-
-import Live
 from kmkControlA import kmkControlA
 
 def create_instance(c_instance):

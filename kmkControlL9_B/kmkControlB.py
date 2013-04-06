@@ -37,13 +37,13 @@ class kmkControlB (ControlSurface):
 
         try:
             is_momentary = True
-            self._shift_button = ButtonElement(is_momentary, MIDI_NOTE_TYPE, CHANNEL, KMK_PAD[11])
+            #### self._shift_button = ButtonElement(is_momentary, MIDI_NOTE_TYPE, CHANNEL, KMK_PAD[11])
             mixer = self._setup_mixer_control()
-            self._setup_device_and_transport_control() 
+            self._setup_device_and_transport_control()
             self.log_message("!!!!!!!!!!!KMK_B control surface is go!!!!!!!!!!!")
         finally:
             pass
-        
+
     def refresh_state(self):
         ControlSurface.refresh_state(self)
         self.schedule_message(5, self._update_hardware)

@@ -1,9 +1,7 @@
-# emacs-mode: -*- python-*-
-
 from __future__ import with_statement
 import Live
 from _Framework.ControlSurface import ControlSurface
-from kmkControlL8_B.kmkSysexLookup import *
+from kmkControlL9_B.kmkSysexLookup import *
 
 MIDI_NOTE_ON_STATUS = 144
 MIDI_CC_STATUS = 176
